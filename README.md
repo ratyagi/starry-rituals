@@ -12,18 +12,18 @@ Starry Habits is a calm, night-sky themed habit tracker. Build a constellation o
 
 ## Tech stack
 
-- Vite + React + TypeScript
-- Tailwind CSS + shadcn/ui
-- TanStack Query
-- React Router
-- Vitest + Testing Library
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
 ## Getting started
 
-## How can I edit this code?
+### How can I edit this code?
 
-There are several ways of editing your application. 
-Understand the code, vibe code your way through it or just clone it :)
+Clone it → explore it → vide code it → change one tiny thing → run it → repeat ✨
+(Or keep it exactly as it is. The sky won’t judge.)
 
 ### Prerequisites
 
@@ -57,20 +57,12 @@ src/
   lib/               # utilities and storage helpers
   pages/             # route-level views (Index, NotFound)
   types/             # shared TypeScript types
+```
 
 ## Data & persistence
 
 Habit data is stored in the browser via `localStorage` under the key `starry-habits-data`. Clearing site data will reset the app.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
 ## License
 
