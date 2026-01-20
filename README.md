@@ -3,6 +3,7 @@
 Starry Habits is a calm, night-sky themed habit tracker. Build a constellation of habits, toggle them daily, and review a weekly rhythm overview. All data is stored locally in your browser so you can keep the experience private and fast.
 
 ## [Demo](https://youtu.be/wu_l21Db-WQ)
+![Screenshot](public/image.png)
 
 ## Features
 
