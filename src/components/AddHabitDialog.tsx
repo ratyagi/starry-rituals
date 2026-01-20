@@ -77,6 +77,7 @@ export function AddHabitDialog({
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g., Morning meditation"
               className="bg-secondary border-border focus:border-swirl"
+              autoComplete="off"
               autoFocus
             />
           </div>

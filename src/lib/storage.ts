@@ -22,7 +22,11 @@ export function saveData(data: HabitData): void {
 }
 
 export function getTodayKey(): string {
-  return new Date().toISOString().split('T')[0];
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 
 export function getDayLog(data: HabitData, date: string): DayLog | undefined {
@@ -60,10 +64,18 @@ export function toggleHabit(data: HabitData, habitId: string, date: string): Hab
 }
 
 export function addHabit(data: HabitData, habit: Omit<Habit, 'id' | 'createdAt' | 'archived'>): HabitData {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  
   const newHabit: Habit = {
     ...habit,
     id: crypto.randomUUID(),
-    createdAt: new Date().toISOString(),
+    createdAt: `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`,
     archived: false,
   };
   
@@ -101,7 +113,11 @@ export function getWeekDates(referenceDate: Date = new Date()): string[] {
   for (let i = 0; i < 7; i++) {
     const date = new Date(startOfWeek);
     date.setDate(startOfWeek.getDate() + i);
-    dates.push(date.toISOString().split('T')[0]);
+    
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    dates.push(`${year}-${month}-${day}`);
   }
   
   return dates;
