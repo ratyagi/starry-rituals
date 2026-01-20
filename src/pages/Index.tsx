@@ -135,7 +135,7 @@ export default function Index() {
         </div>
 
         {/* Main view */}
-        <div className="flex-1 flex flex-col items-center justify-center mb-8">
+        <div className="flex-1 flex flex-col items-center justify-center mb-1">
           {viewMode === 'daily' ? (
             <ConstellationView
               data={data}
@@ -152,7 +152,7 @@ export default function Index() {
           <button
             onClick={handleOpenDialog}
             className={cn(
-              'flex items-center gap-2 px-5 py-3 rounded-full',
+              'flex items-center gap-2 px-8 py-4 rounded-full',
               'bg-secondary/80 backdrop-blur-sm text-foreground',
               'hover:bg-secondary transition-all duration-300',
               'focus:outline-none focus:ring-2 focus:ring-swirl focus:ring-offset-2 focus:ring-offset-background'
