@@ -135,7 +135,7 @@ export default function Index() {
         </div>
 
         {/* Main view */}
-        <div className="flex-1 flex flex-col items-center justify-center mb-1">
+        <div className="flex-1 flex flex-col items-center justify-center mb--5">
           {viewMode === 'daily' ? (
             <ConstellationView
               data={data}
