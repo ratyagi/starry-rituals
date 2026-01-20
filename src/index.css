@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Starry Night Design System - All colors in HSL */
+
+@layer base {
+  :root {
+    /* Starry Night Palette */
+    --night-sky: 209 62% 11%;
+    --midnight: 212 60% 15%;
+    --swirl-blue: 204 89% 60%;
+    --star-yellow: 45 90% 61%;
+    --moonlight: 46 100% 86%;
+    --cypress: 158 53% 12%;
+    
+    /* Semantic tokens */
+    --background: 209 62% 11%;
+    --foreground: 240 17% 93%;
+
+    --card: 212 60% 12%;
+    --card-foreground: 240 17% 93%;
+
+    --popover: 212 60% 12%;
+    --popover-foreground: 240 17% 93%;
+
+    --primary: 204 89% 60%;
+    --primary-foreground: 209 62% 11%;
+
+    --secondary: 212 60% 20%;
+    --secondary-foreground: 240 17% 93%;
+
+    --muted: 212 50% 18%;
+    --muted-foreground: 212 33% 70%;
+
+    --accent: 45 90% 61%;
+    --accent-foreground: 209 62% 11%;
+
+    --destructive: 0 0% 0%;
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 212 40% 25%;
+    --input: 212 40% 20%;
+    --ring: 204 89% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom Starry Night tokens */
+    --glow-star: 45 90% 61%;
+    --glow-blue: 204 89% 60%;
+    --text-primary: 240 17% 93%;
+    --text-secondary: 212 33% 70%;
+    
+    /* Gradients */
+    --gradient-night: linear-gradient(180deg, hsl(209, 62%, 8%) 0%, hsl(212, 60%, 15%) 50%, hsl(209, 55%, 12%) 100%);
+    --gradient-star-glow: radial-gradient(circle, hsl(45, 90%, 61%, 0.6) 0%, hsl(45, 90%, 61%, 0) 70%);
+    --gradient-blue-glow: radial-gradient(circle, hsl(204, 89%, 60%, 0.4) 0%, hsl(204, 89%, 60%, 0) 70%);
+    
+    /* Shadows */
+    --shadow-star: 0 0 20px hsl(45, 90%, 61%, 0.5), 0 0 40px hsl(45, 90%, 61%, 0.3);
+    --shadow-soft: 0 4px 24px hsl(209, 62%, 5%, 0.5);
+    --shadow-glow: 0 0 30px hsl(204, 89%, 60%, 0.3);
+
+    --sidebar-background: 209 62% 11%;
+    --sidebar-foreground: 240 17% 93%;
+    --sidebar-primary: 204 89% 60%;
+    --sidebar-primary-foreground: 209 62% 11%;
+    --sidebar-accent: 212 60% 20%;
+    --sidebar-accent-foreground: 240 17% 93%;
+    --sidebar-border: 212 40% 25%;
+    --sidebar-ring: 204 89% 60%;
+  }
+
+  .dark {
+    --background: 209 62% 11%;
+    --foreground: 240 17% 93%;
+    --card: 212 60% 12%;
+    --card-foreground: 240 17% 93%;
+    --popover: 212 60% 12%;
+    --popover-foreground: 240 17% 93%;
+    --primary: 204 89% 60%;
+    --primary-foreground: 209 62% 11%;
+    --secondary: 212 60% 20%;
+    --secondary-foreground: 240 17% 93%;
+    --muted: 212 50% 18%;
+    --muted-foreground: 212 33% 70%;
+    --accent: 45 90% 61%;
+    --accent-foreground: 209 62% 11%;
+    --border: 212 40% 25%;
+    --input: 212 40% 20%;
+    --ring: 204 89% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom animations */
+@keyframes star-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes star-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px hsl(45, 90%, 61%, 0.3), 0 0 20px hsl(45, 90%, 61%, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(45, 90%, 61%, 0.5), 0 0 40px hsl(45, 90%, 61%, 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes save-ripple {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-star-pulse {
+  animation: star-pulse 3s ease-in-out infinite;
+}
+
+.animate-star-glow {
+  animation: star-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-save-ripple {
+  animation: save-ripple 0.6s ease-out forwards;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-star-pulse,
+  .animate-star-glow,
+  .animate-float,
+  .animate-twinkle {
+    animation: none;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(212, 60%, 12%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(212, 40%, 30%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(204, 89%, 50%);
+}
